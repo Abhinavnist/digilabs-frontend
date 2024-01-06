@@ -11,10 +11,13 @@ const MainCont = styled.div`
     align-items: center;
     gap: 8px;
     background: var(--White, #fff);
+    @media (min-width: 768px) and (max-width: 992px) {
+      transform: scale(0.8);
+    }
   }
   .container {
     display: flex;
-    width: 1280px;
+    /* width: 1280px; */
     padding: 32px;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +26,7 @@ const MainCont = styled.div`
   }
   .row {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -31,14 +34,14 @@ const MainCont = styled.div`
   }
   .column {
     display: flex;
-    width: 824px;
+    /* width: 824px; */
     flex-direction: column;
     align-items: center;
     gap: 48px;
   }
   .content {
     display: flex;
-    width: 824px;
+    /* width: 824px; */
     flex-direction: column;
     align-items: center;
     gap: 32px;
@@ -145,9 +148,9 @@ const Testimonial = () => {
                   alt="logo"
                 />
                 <div className="text">
-                  I had the pleasure of experiencing the next generation of card
-                  solutions with this incredible product. It's refreshing to see
-                  such innovation in the financial industry.
+                  I had the pleasure of experiencing the next generation <br />{" "}
+                  of card solutions with this incredible product. It's <br />
+                  refreshing to see such innovation in the financial industry.
                 </div>
               </div>
               <div className="avatar">

@@ -10,10 +10,16 @@ const MainCont = styled.div`
     justify-content: center;
     align-items: center;
     gap: 8px;
+    @media (min-width: 768px) and (max-width: 992px) {
+      transform: scale(0.6);
+    }
+    /* @media (max-width: 600px) {
+      transform: scale(0.5);
+    } */
   }
   .container {
     display: flex;
-    width: 1280px;
+    /* width: 1280px; */
     padding: 0px 32px;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +28,7 @@ const MainCont = styled.div`
   }
   .row {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     align-items: center;
     gap: 32px;
@@ -37,13 +43,11 @@ const MainCont = styled.div`
   .subtittle-heading {
     color: var(--Neutral-50, #121417);
     text-align: center;
-
-    /* H400/40/SemiBold */
     font-family: Manrope;
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
-    line-height: 48px; /* 120% */
+    line-height: 48px;
   }
   .action {
     display: flex;
@@ -106,9 +110,9 @@ const CallToAction = () => {
         <div className="container">
           <div className="row">
             <div className="subtittle">
-              <div className="subtittle-heading">
+              <p className="subtittle-heading">
                 Unlock Limitless Possibilities with Our New Card Solutions
-              </div>
+              </p>
             </div>
             <div className="action">
               <div className="button">
@@ -124,7 +128,7 @@ const CallToAction = () => {
               </div>
               <div className="button">
                 <div className="base-button-2">
-                  <div className="button-text-2">Unlock your card</div>
+                  <div className="button-text-2">Customer Support</div>
                   <Image
                     src={"/headphones.svg"}
                     height={20}

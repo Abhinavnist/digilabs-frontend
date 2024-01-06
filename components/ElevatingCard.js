@@ -4,6 +4,7 @@ import styled from "styled-components"
 const MainCont = styled.div`
   .elevating {
     display: flex;
+
     /* width: 1440px; */
     padding: 96px 80px;
     flex-direction: column;
@@ -13,7 +14,7 @@ const MainCont = styled.div`
   }
   .container {
     display: flex;
-    width: 1280px;
+    /* width: 1280px; */
     padding: 0px 32px;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +23,7 @@ const MainCont = styled.div`
   }
   .row {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -30,7 +31,7 @@ const MainCont = styled.div`
   }
   .subtitle {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -38,7 +39,7 @@ const MainCont = styled.div`
   }
   .content {
     display: flex;
-    width: 704px;
+    /* width: 704px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -64,7 +65,7 @@ const MainCont = styled.div`
     cursor: pointer;
   }
   p {
-    width: 576px;
+    /* width: 576px; */
     color: var(--Pri-Purple-400, #582066);
     text-align: center;
     font-family: Inter;
@@ -79,10 +80,11 @@ const MainCont = styled.div`
     justify-content: center;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
   }
   .card {
     display: flex;
-    width: 592px;
+    /* width: 592px; */
     height: 490px;
     padding: 33px 87px 0px 39px;
     align-items: center;
@@ -90,9 +92,27 @@ const MainCont = styled.div`
   }
   .column {
     display: flex;
-    width: 1216px;
-    align-items: flex-start;
+    /* width: 1216px; */
+
+    justify-content: center;
+    align-items: center;
     gap: 32px;
+    @media (min-width: 768px) and (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      display: flex;
+      /* width: 1216px; */
+      align-items: center;
+      gap: 32px;
+    }
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      display: flex;
+
+      align-items: center;
+      gap: 32px;
+    }
   }
 `
 
@@ -105,11 +125,11 @@ const ElevatingCard = () => {
             <div className="subtitle">
               <div className="content">
                 <div className="content-heading">
-                  Elevating Card Programs with Cutting-Edge Technology
+                  Elevating Card Programs with <br /> Cutting-Edge Technology
                 </div>
                 <p>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                  ut labore et dolore magna aliqua.
+                  ut <br /> labore et dolore magna aliqua.
                 </p>
               </div>
               <div className="action">

@@ -7,24 +7,32 @@ const MainCont = styled.div`
   background: var(--White, #fff);
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
+
   .hero {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    background: url("/Mesh.svg");
+
+    @media (min-width: 768px) and (max-width: 992px) {
+      transform: scale(0.8);
+    }
+    /* @media (max-width: 600px) {
+    } */
   }
   .content {
     display: flex;
-    width: 832px;
+    /* width: 832px; */
     flex-direction: column;
     align-items: center;
     gap: 16px;
   }
   .seamless {
-    width: 832px;
+    /* width: 832px; */
     color: var(--Pri-Purple-400, #582066);
     text-align: center;
 
@@ -48,7 +56,7 @@ const MainCont = styled.div`
     line-height: 72px; /* 116.129% */
   }
   .text {
-    width: 648px;
+    /* width: 648px; */
     color: var(--Neutral-400, #5a6475);
     text-align: center;
 
@@ -81,7 +89,7 @@ const MainCont = styled.div`
     line-height: 20px; /* 125% */
   }
   .no-card {
-    width: 832px;
+    /* width: 832px; */
     color: var(--Neutral-400, #5a6475);
     text-align: center;
 
@@ -99,13 +107,14 @@ const HeroSection = () => {
     <MainCont>
       <div className="hero">
         <div className="content">
-          <div className="seamless">Seamless experience</div>
-          <div className="heading">
-            Unleashing the Next Generation of Card Solutions
-          </div>
+          <p className="seamless">Seamless experience</p>
+          <p className="heading">
+            Unleashing the Next <br /> Generation of Card <br /> Solutions
+          </p>
           <p className="text">
             consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            labore et <br /> dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud
           </p>
         </div>
         <div>

@@ -22,6 +22,7 @@ export default function Home() {
       <AnnouncementBar />
       <NavBar />
       <HeroSection />
+
       <LogoCloud />
       <Feature />
       <ElevatingCard />

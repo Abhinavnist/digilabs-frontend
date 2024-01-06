@@ -4,6 +4,7 @@ const MainCont = styled.div`
   .announ {
     display: flex;
     padding: 8px;
+
     justify-content: center;
     align-items: center;
     gap: 8px;

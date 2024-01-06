@@ -23,7 +23,8 @@ const MainCont = styled.div`
   .row {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 96px;
   }
   .top-container {
@@ -40,7 +41,7 @@ const MainCont = styled.div`
   }
   .content-container {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -48,7 +49,7 @@ const MainCont = styled.div`
   }
   .top-content {
     display: flex;
-    width: 512px;
+    /* width: 512px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -67,13 +68,13 @@ const MainCont = styled.div`
     line-height: 28px; /* 175% */
   }
   .divider {
-    width: 1216px;
+    /* width: 1216px; */
     height: 1px;
     background: #f1f1f2;
   }
   .bottom-container {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -83,6 +84,17 @@ const MainCont = styled.div`
     display: flex;
     align-items: flex-start;
     gap: 32px;
+    @media (min-width: 768px) and (max-width: 992px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-self: flex-start;
+    }
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      /* margin-left: 370px; */
+    }
   }
   .bottom-content-container {
     display: flex;
@@ -101,6 +113,44 @@ const MainCont = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: 20px; /* 125% */
+  }
+  .content-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .social-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .social-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+  .copyright {
+    /* width: 1216px; */
+    color: var(--Neutral-400, #5a6475);
+    text-align: center;
+
+    /* H25/14/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
   }
 `
 
@@ -122,10 +172,11 @@ const Footer = () => {
                       className="logo"
                     />
                     <div className="top-text">
-                      Mode UI is a comprehensive design system that empowers
+                      Mode UI is a comprehensive design system that empowers{" "}
+                      <br />
                       designers and developers to create cohesive and visually
-                      stunning user interfaces across various platforms and
-                      devices
+                      stunning <br /> user interfaces across various platforms
+                      and devices
                     </div>
                     <div className="divider"></div>
                   </div>
@@ -136,7 +187,75 @@ const Footer = () => {
               <div className="bottom-content">
                 <div className="bottom-content-container">
                   <div className="bottom-container-heading">Company</div>
-                  <div className="content-links"></div>
+                  <div className="content-links">
+                    <span>About us</span>
+                    <span>Pricing</span>
+                    <span>Contact Us</span>
+                    <span>Feature</span>
+                  </div>
+                </div>
+                <div className="bottom-content-container">
+                  <div className="bottom-container-heading">Product</div>
+                  <div className="content-links">
+                    <span>Resource</span>
+                    <span>Legal</span>
+                    <span>Contact Us</span>
+                    <span>Feature</span>
+                  </div>
+                </div>
+                <div className="bottom-content-container">
+                  <div className="bottom-container-heading">Resource</div>
+                  <div className="content-links">
+                    <span>About us</span>
+                    <span>Pricing</span>
+                    <span>Contact Us</span>
+                    <span>Feature</span>
+                  </div>
+                </div>
+                <div className="bottom-content-container">
+                  <div className="bottom-container-heading">Legal</div>
+                  <div className="content-links">
+                    <span>About us</span>
+                    <span>Pricing</span>
+                    <span>Contact Us</span>
+                    <span>Feature</span>
+                  </div>
+                </div>
+                <div className="bottom-content-container">
+                  <div className="bottom-container-heading">Support</div>
+                  <div className="content-links">
+                    <span>About us</span>
+                    <span>Pricing</span>
+                    <span>Contact Us</span>
+                    <span>Feature</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="social-container">
+              <div className="social-content">
+                <div className="social-group">
+                  <Image
+                    src={"/Frame(1).svg"}
+                    height={20}
+                    width={20}
+                    alt="logo"
+                  />
+                  <Image
+                    src={"/Social.svg"}
+                    height={20}
+                    width={20}
+                    alt="logo"
+                  />
+                  <Image
+                    src={"/Social(1).svg"}
+                    height={20}
+                    width={20}
+                    alt="logo"
+                  />
+                </div>
+                <div className="copyright">
+                  © 2023 Mode UI Inc. All Rights Reserved.
                 </div>
               </div>
             </div>

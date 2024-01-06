@@ -35,7 +35,19 @@ const MainCont = styled.div`
 
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 25px;
+    @media (min-width: 768px) and (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 16px;
+    }
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 16px;
+    }
   }
   .content {
     display: flex;

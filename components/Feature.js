@@ -3,15 +3,16 @@ import Image from "next/legacy/image"
 import styled from "styled-components"
 const MainCont = styled.div`
   display: flex;
+  width: 100vw;
 
-  padding: 96px 80px;
+  /* padding: 96px 80px; */
   justify-content: center;
   align-items: center;
   gap: 8px;
   .container {
     display: flex;
-    width: 1280px;
-    padding: 0px 32px;
+    /* width: 1280px;
+    padding: 0px 32px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -19,7 +20,7 @@ const MainCont = styled.div`
   }
   .row {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -27,22 +28,25 @@ const MainCont = styled.div`
   }
   .subtitle {
     display: flex;
-    width: 1216px;
+    /* width: 1216px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    @media (max-width: 600px) {
+      transform: scale(0.7);
+    }
   }
   .content-head {
     display: flex;
-    width: 704px;
+    /* width: 704px; */
     flex-direction: column;
     align-items: center;
     gap: 32px;
   }
   .content {
     display: flex;
-    width: 704px;
+    /* width: 704px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -61,7 +65,7 @@ const MainCont = styled.div`
     line-height: 48px; /* 120% */
   }
   p {
-    width: 576px;
+    /* width: 576px; */
     color: var(--Neutral-400, #5a6475);
     text-align: center;
 
@@ -109,6 +113,14 @@ const MainCont = styled.div`
     display: flex;
     align-items: center;
     gap: 32px;
+    @media (min-width: 768px) and (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+    }
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
   .column-1 {
     display: flex;
@@ -124,6 +136,7 @@ const MainCont = styled.div`
     align-items: center;
     gap: 16px;
   }
+
   .content-text {
     display: flex;
     flex-direction: column;
@@ -173,9 +186,9 @@ const Feature = () => {
           <div className="subtitle">
             <div className="content-head">
               <div className="content">
-                <div className="heading">
+                <p className="heading">
                   Elevating Card Programs with Cutting-Edge Technology
-                </div>
+                </p>
                 <p>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt
                   ut labore et dolore magna aliqua.
