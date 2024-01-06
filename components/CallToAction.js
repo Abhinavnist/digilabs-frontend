@@ -69,6 +69,7 @@ const MainCont = styled.div`
     gap: 8px;
     border-radius: 8px;
     background: var(--Pri-Purple-400, #582066);
+    cursor: pointer;
   }
   .button-text {
     color: var(--White, #fff);
@@ -100,6 +101,7 @@ const MainCont = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: 20px; /* 125% */
+    cursor: pointer;
   }
 `
 

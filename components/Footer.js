@@ -118,6 +118,7 @@ const MainCont = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
+    cursor: pointer;
   }
 
   .social-container {
@@ -139,6 +140,7 @@ const MainCont = styled.div`
     justify-content: center;
     align-items: center;
     gap: 24px;
+    cursor: pointer;
   }
   .copyright {
     /* width: 1216px; */
@@ -197,37 +199,37 @@ const Footer = () => {
                 <div className="bottom-content-container">
                   <div className="bottom-container-heading">Product</div>
                   <div className="content-links">
-                    <span>Resource</span>
-                    <span>Legal</span>
-                    <span>Contact Us</span>
-                    <span>Feature</span>
+                    <span>Figma design system</span>
+                    <span>Ios kit</span>
+                    <span>Android kit</span>
+                    <span>Wireframe</span>
                   </div>
                 </div>
                 <div className="bottom-content-container">
                   <div className="bottom-container-heading">Resource</div>
                   <div className="content-links">
-                    <span>About us</span>
-                    <span>Pricing</span>
-                    <span>Contact Us</span>
-                    <span>Feature</span>
+                    <span>Templates</span>
+                    <span>Landing pages</span>
+                    <span>Documentation</span>
+                    <span>Comp library</span>
                   </div>
                 </div>
                 <div className="bottom-content-container">
                   <div className="bottom-container-heading">Legal</div>
                   <div className="content-links">
-                    <span>About us</span>
-                    <span>Pricing</span>
-                    <span>Contact Us</span>
-                    <span>Feature</span>
+                    <span>Privacy policy</span>
+                    <span>Terms & Conditions</span>
+                    <span>Disclaimer</span>
+                    <span>Affiliate programme</span>
                   </div>
                 </div>
                 <div className="bottom-content-container">
                   <div className="bottom-container-heading">Support</div>
                   <div className="content-links">
-                    <span>About us</span>
-                    <span>Pricing</span>
-                    <span>Contact Us</span>
-                    <span>Feature</span>
+                    <span>Help centre</span>
+                    <span>Raise ticket</span>
+                    <span>Report</span>
+                    <span>Refund</span>
                   </div>
                 </div>
               </div>
