@@ -1,7 +1,9 @@
 import AnnouncementBar from "@/components/AnnouncementBar"
+import CallToAction from "@/components/CallToAction"
 import Data from "@/components/Data"
 import ElevatingCard from "@/components/ElevatingCard"
 import Feature from "@/components/Feature"
+import Footer from "@/components/Footer"
 import HeroSection from "@/components/HeroSection"
 import LogoCloud from "@/components/LogoCloud"
 import NavBar from "@/components/NavBar"
@@ -25,6 +27,8 @@ export default function Home() {
       <ElevatingCard />
       <Data />
       <Testimonial />
+      <CallToAction />
+      <Footer />
     </MainCont>
   )
 }
