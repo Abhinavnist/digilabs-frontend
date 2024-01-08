@@ -1,5 +1,6 @@
 import AnnouncementBar from "@/components/AnnouncementBar"
 import CallToAction from "@/components/CallToAction"
+import Card from "@/components/Card"
 import Data from "@/components/Data"
 import ElevatingCard from "@/components/ElevatingCard"
 import Feature from "@/components/Feature"
@@ -22,13 +23,13 @@ export default function Home() {
       <AnnouncementBar />
       <NavBar />
       <HeroSection />
-
       <LogoCloud />
       <Feature />
       <ElevatingCard />
       <Data />
       <Testimonial />
       <CallToAction />
+      <Card />
       <Footer />
     </MainCont>
   )

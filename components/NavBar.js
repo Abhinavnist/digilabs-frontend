@@ -1,5 +1,5 @@
 import Image from "next/legacy/image"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Link from "next/link"
 
@@ -90,6 +90,20 @@ const MainCont = styled.div`
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false)
+  const [logo, setLogo] = useState(null)
+  useEffect(() => {
+    const fetchLogo = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/photo")
+        const logoData = await response.json()
+        setLogo(logoData.photo)
+      } catch (error) {
+        console.error("Error fetching logo:", error)
+      }
+    }
+
+    fetchLogo()
+  }, [])
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -103,20 +117,30 @@ const NavBar = () => {
       <div className="navbar">
         <div className="start">
           <div className="logo">
-            <Image
-              src={"/Logo.svg"}
-              height={16}
-              width={84}
-              alt="logo"
-              className="logo"
-            />
+            {logo ? (
+              <Image
+                src={logo}
+                height={16}
+                width={84}
+                alt="logo"
+                className="logo"
+              />
+            ) : (
+              <Image
+                src="/Logo.svg"
+                height={16}
+                width={84}
+                alt="logo"
+                className="logo"
+              />
+            )}
           </div>
         </div>
         <div className="nav-item">
           <div className="card">
             <div>Card access</div>
             <Image
-              src={"/chevron-down.svg"}
+              src="/chevron-down.svg"
               height={20}
               width={20}
               alt="down"

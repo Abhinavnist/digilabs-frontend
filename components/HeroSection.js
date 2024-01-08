@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/legacy/image"
 import styled from "styled-components"
 const MainCont = styled.div`
@@ -103,6 +103,24 @@ const MainCont = styled.div`
 `
 
 const HeroSection = () => {
+  const [buttonText, setButtonText] = useState("Unlock your Card")
+
+  useEffect(() => {
+    const fetchButtonText = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/button")
+        const data = await response.json()
+
+        if (data && data.name) {
+          setButtonText(data.name)
+        }
+      } catch (error) {
+        console.error("Error fetching button text:", error)
+      }
+    }
+
+    fetchButtonText()
+  }, [])
   return (
     <MainCont>
       <div className="hero">
@@ -119,7 +137,7 @@ const HeroSection = () => {
         </div>
         <div>
           <div className="button">
-            <div className="button-text">Unlock your Card</div>
+            <div className="button-text">{buttonText}</div>
             <Image
               src={"/arrow-right.svg"}
               height={20}
