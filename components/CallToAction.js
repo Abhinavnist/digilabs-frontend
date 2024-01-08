@@ -48,6 +48,13 @@ const MainCont = styled.div`
     font-style: normal;
     font-weight: 600;
     line-height: 48px;
+    @media (max-width: 600px) {
+      flex: 1 0 0;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 2.5rem;
+    }
   }
   .action {
     display: flex;
@@ -55,6 +62,11 @@ const MainCont = styled.div`
     align-items: center;
     gap: 8px;
     align-self: stretch;
+    @media (max-width: 600px) {
+      flex-direction: column;
+      width: 21.4375rem;
+      gap: 0.5rem;
+    }
   }
   .button {
     display: flex;

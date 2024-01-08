@@ -109,8 +109,9 @@ const MainCont = styled.div`
       display: flex;
       flex-direction: column;
       display: flex;
-
       align-items: center;
+      width: 21.4375rem;
+
       gap: 32px;
     }
   }

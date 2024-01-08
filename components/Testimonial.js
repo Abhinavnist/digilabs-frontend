@@ -57,6 +57,8 @@ const MainCont = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: 40px; /* 125% */
+    @media (max-width: 600px) {
+    }
   }
   .avatar {
     display: flex;
@@ -148,9 +150,9 @@ const Testimonial = () => {
                   alt="logo"
                 />
                 <div className="text">
-                  I had the pleasure of experiencing the next generation <br />{" "}
-                  of card solutions with this incredible product. It's <br />
-                  refreshing to see such innovation in the financial industry.
+                  I had the pleasure of experiencing the next generation of card
+                  solutions with this incredible product. It's refreshing to see
+                  such innovation in the financial industry.
                 </div>
               </div>
               <div className="avatar">
