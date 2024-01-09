@@ -9,7 +9,7 @@ const SidebarContainer = styled.div`
   padding: 20px;
   @media (max-width: 992px) {
     width: 100%;
-    height: 20vh;
+    height: 25vh;
   }
 `
 
