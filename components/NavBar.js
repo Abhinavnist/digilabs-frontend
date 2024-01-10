@@ -94,7 +94,9 @@ const NavBar = () => {
   useEffect(() => {
     const fetchLogo = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/photo")
+        const response = await fetch(
+          "https://digilabs-backend-phi.vercel.app/api/photo"
+        )
         const logoData = await response.json()
         setLogo(logoData.photo)
       } catch (error) {

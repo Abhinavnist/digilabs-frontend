@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 const MainCont = styled.div`
   .announ {
@@ -48,15 +48,33 @@ const MainCont = styled.div`
 `
 
 const AnnouncementBar = () => {
+  const [announcement, setAnnouncement] = useState("")
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Fetch data from the API
+    fetch("https://digilabs-backend-phi.vercel.app/api/announcement")
+      .then((response) => response.json())
+      .then((data) => {
+        setAnnouncement(data.name)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.error("Error fetching announcement:", error)
+        setLoading(false)
+      })
+  }, [])
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
   return (
     <MainCont>
       <div className="announ">
         <div className="Badges">
           <div className="Badges-text">Annoouncement</div>
         </div>
-        <div className="announce">
-          We are happy to announce that we raise $2 Million in Seed Funding
-        </div>
+        <div className="announce">{announcement}</div>
       </div>
       <div className="border"></div>
     </MainCont>

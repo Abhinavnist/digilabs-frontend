@@ -70,7 +70,7 @@ const Card = () => {
 
   const handleSubmit = () => {
     if (isEmailValid) {
-      fetch("http://localhost:5000/api/store-email", {
+      fetch("https://digilabs-backend-phi.vercel.app/api/store-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

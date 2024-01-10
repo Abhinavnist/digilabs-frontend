@@ -49,7 +49,9 @@ const FetchEmailsTable = () => {
     // Fetch email IDs from the backend (replace the URL with your actual API endpoint)
     const fetchEmails = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/get-emails")
+        const response = await fetch(
+          "https://digilabs-backend-phi.vercel.app/api/get-emails"
+        )
         const emailData = await response.json()
         setEmails(emailData.emails)
       } catch (error) {
@@ -63,7 +65,7 @@ const FetchEmailsTable = () => {
   const handleDeleteEmail = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/email/delete/${id}`,
+        `https://digilabs-backend-phi.vercel.app/api/email/delete/${id}`,
         {
           method: "DELETE",
         }

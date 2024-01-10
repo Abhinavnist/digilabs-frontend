@@ -56,7 +56,9 @@ const ChangeButtonTextCard = () => {
     // Fetch the current button text from the backend (GET request)
     const fetchButtonText = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/button")
+        const response = await fetch(
+          "https://digilabs-backend-phi.vercel.app/api/button"
+        )
         const buttonTextData = await response.json()
         setCurrentButtonText(buttonTextData.name)
       } catch (error) {
@@ -69,13 +71,16 @@ const ChangeButtonTextCard = () => {
 
   const handleChangeText = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/button", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: newButtonText }),
-      })
+      const response = await fetch(
+        "https://digilabs-backend-phi.vercel.app/api/button",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name: newButtonText }),
+        }
+      )
 
       if (response.ok) {
         setCurrentButtonText(newButtonText)

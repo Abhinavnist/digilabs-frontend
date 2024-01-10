@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import Image from "next/legacy/image"
 
 const ProfileCardContainer = styled.div`
   width: 80%;
@@ -40,13 +41,15 @@ const ProfileForm = styled.form`
 `
 
 const ProfileUpdateCard = () => {
-  const [profile, setProfile] = useState({}) // Store the current profile
+  const [profile, setProfile] = useState({})
   const [newPhoto, setNewPhoto] = useState(null)
 
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/profile")
+        const response = await fetch(
+          "https://digilabs-backend-phi.vercel.app/api/photo"
+        )
         const profileData = await response.json()
         setProfile(profileData)
       } catch (error) {
@@ -55,7 +58,7 @@ const ProfileUpdateCard = () => {
     }
 
     fetchProfile()
-  }, [])
+  }, [newPhoto])
 
   const handlePhotoChange = (e) => {
     setNewPhoto(e.target.files[0])
@@ -68,10 +71,13 @@ const ProfileUpdateCard = () => {
       const formData = new FormData()
       formData.append("photo", newPhoto)
 
-      const response = await fetch("http://localhost:5000/api/upload", {
-        method: "POST",
-        body: formData,
-      })
+      const response = await fetch(
+        "https://digilabs-backend-phi.vercel.app/api/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      )
 
       if (response.true) {
         console.log("Profile photo updated successfully!")
@@ -89,9 +95,11 @@ const ProfileUpdateCard = () => {
     <ProfileCardContainer>
       <h2>Update Profile Photo</h2>
       {profile.photo && (
-        <img
+        <Image
           src={profile.photo}
           alt="Current Profile"
+          height={16}
+          width={84}
         />
       )}
       <ProfileForm onSubmit={handleUpdatePhoto}>

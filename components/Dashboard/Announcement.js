@@ -51,9 +51,11 @@ const AnnouncementCard = () => {
 
   const fetchAnnouncement = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/announcement")
+      const response = await fetch(
+        "https://digilabs-backend-phi.vercel.app/api/announcement"
+      )
       const data = await response.json()
-      setCurrentAnnouncement(data.announcement)
+      setCurrentAnnouncement(data.name)
     } catch (error) {
       console.error("Error fetching announcement:", error)
     }
@@ -63,20 +65,46 @@ const AnnouncementCard = () => {
     setNewAnnouncement(event.target.value)
   }
 
+  // const handleUpdateAnnouncement = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       "https://digilabs-backend-phi.vercel.app/api/announcement",
+  //       {
+  //         method: "PUT",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({ announcement: newAnnouncement }),
+  //       }
+  //     )
+
+  //     if (response.ok) {
+  //       console.log("Announcement updated successfully!")
+  //       fetchAnnouncement()
+  //     } else {
+  //       console.error("Error updating announcement:", response.statusText)
+  //     }
+  //   } catch (error) {
+  //     console.error("Error updating announcement:", error)
+  //   }
+  // }
   const handleUpdateAnnouncement = async () => {
     try {
-      // Send the new announcement to the backend (POST request)
-      const response = await fetch("http://localhost:5000/api/announcement", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ announcement: newAnnouncement }),
-      })
+      const response = await fetch(
+        "https://digilabs-backend-phi.vercel.app/api/announcement",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name: newAnnouncement }),
+        }
+      )
 
       if (response.ok) {
         console.log("Announcement updated successfully!")
         fetchAnnouncement()
+        setNewAnnouncement("")
       } else {
         console.error("Error updating announcement:", response.statusText)
       }
