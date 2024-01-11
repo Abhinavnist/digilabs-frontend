@@ -58,7 +58,7 @@ const ProfileUpdateCard = () => {
     }
 
     fetchProfile()
-  }, [newPhoto])
+  }, [newPhoto, profile])
 
   const handlePhotoChange = (e) => {
     setNewPhoto(e.target.files[0])
@@ -81,7 +81,7 @@ const ProfileUpdateCard = () => {
 
       if (response.true) {
         console.log("Profile photo updated successfully!")
-
+        setNewPhoto(null)
         fetchProfile()
       } else {
         console.error("Error updating profile photo:", response.statusText)
